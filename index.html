@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="script/script.js"></script>
+    <link rel="stylesheet" href="style/index.css">
+    <script>
+        window.onload = function() {
+            createDB();
+        }
+    </script>
+    <title>Eber</title>
+</head>
+
+<body>
+
+    <div class="select-enter">
+        <button onclick="navigation(['.select-enter'], ['form[name=enter]'])">ENTER</button>
+        <button onclick="navigation(['.select-enter'], ['.select-registration'])">REGISTRATION</button>
+        <button class="delete-db" onclick="deleteDB()">Delete DB</button>
+    </div>
+
+    <form action="" name="enter">
+        <input type="email" name="email" id="enter-email" placeholder="E-mail">
+        <input type="password" name="password" id="enter-password" placeholder="Password">
+        <button class="enter-button" onclick="checkEnterForm()">Enter</button>
+        <button onclick="navigation(['form[name=enter]'], ['.select-enter']); enterFormClear(); event.preventDefault()">Back</button>
+    </form>
+
+    <div class="select-registration">
+        <div class="" onclick="navigation(['.select-registration'], ['form[name=registration]'])">Customer</div>
+        <div class="" onclick="navigation(['.select-registration'], ['form[name=registration]', '.driver-form'])">Driver</div>
+        <button onclick="navigation(['.select-registration'], ['.select-enter'])">Back</button>
+    </div>
+
+    <form name="registration">
+        <input type="text" name="name" id="registration-name" placeholder="Name">
+        <input type="text" name="lastname" id="registration-lastname" placeholder="Last name">
+        <input type="number" name="age" id="registration-age" placeholder="Age">
+        <div class="driver-form">
+            <input type="text" name="city" id="registration-city" placeholder="City">
+            <select name="registration-anothercity" id="registration-anothercity">
+                <option value="" disabled selected hidden>Can deliver to other city?</option>
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+            </select>
+        </div>
+        <input type="tel" name="phone" id="registration-phone" placeholder="Phone number">
+        <input type="email" name="email" id="registration-email" placeholder="E-mail">
+        <input type="password" name="password" id="registration-password" placeholder="Password">
+
+        <button onclick="checkRegistrationForm()">Sign up</button>
+        <button onclick="navigation(['form[name=registration]', '.driver-form'], ['.select-registration']);registrationFormClear(); event.preventDefault()">Back</button>
+    </form>
+
+    <div class="customer-page">
+        <div class="customer-page-buttons">
+            <button class="add-load-button" onclick="navigation(['.customer-page'], ['form[name=add-load]'])">Add load</button>
+            <button onclick="navigation(['.customer-page'], ['.select-enter'])">To main page</button>
+        </div>
+        <div class="load-list-title">Created loads list:</div>
+        <div class="customer-loads-list"></div>
+        <div class="load-list-title">Posted loads list:</div>
+        <div class="customer-posted-loads-list"></div>
+        <div class="customer-completed-loads"></div>
+        <div class="customer-mark-block-wrapper" onclick="setCancelConfirm()">
+            <div class="customer-mark-block">
+                <div class="mark-items-block">
+                    <div class="mark-item item1" onclick="giveDriverMark(5)">5</div>
+                    <div class="mark-item item2" onclick="giveDriverMark(4)">4</div>
+                    <div class="mark-item item3" onclick="giveDriverMark(3)">3</div>
+                    <div class="mark-item item4" onclick="giveDriverMark(2)">2</div>
+                    <div class="mark-item item5" onclick="giveDriverMark(1)">1</div>
+                </div>
+                <div class="mark-items-block">
+                    <button onclick="setCancelConfirm()">Back</button>
+                    <button class="mark-notrate" onclick="setNoDriverMark()">Don`t rate</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="dicsplay-customer-mark"></div>
+    </div>
+
+    <form action="" name="add-load">
+        <input type="text" name="load-title" id="load-title" placeholder="Load title">
+        <div class="load-items-block">
+            <select name="load-size" id="load-size">
+                <option value="" disabled selected hidden>Load size</option>
+                <option value="small">small</option>
+                <option value="medium">medium</option>
+                <option value="large">large</option>
+            </select>
+            <input type="number" name="load-weight" id="load-weight" placeholder="Load weight">
+        </div>
+
+        <textarea name="description" id="description" placeholder="Description"></textarea>
+        <div class="load-items-block">
+            <input type="text" name="from-city" id="from-city" placeholder="From city">
+            <input type="text" name="from-street" id="from-street" placeholder="Street">
+        </div>
+        <div class="load-items-block">
+            <input type="text" name="to-city" id="to-city" placeholder="To city">
+            <input type="text" name="to-street" id="to-street" placeholder="Street">
+        </div>
+        <button onclick="checkLoadForm()">Confirm</button>
+        <button onclick="navigation(['form[name=add-load]'], ['.customer-page']); loadFormClean(); event.preventDefault()">Back</button>
+    </form>
+
+    <div class="driver-page">
+        <div class="driver-button-block">
+            <button class="find-load" onclick="navigation(['.driver-page'], ['.select-load-page']); findPostedLoads()">Select load</button>
+            <button onclick="navigation(['.driver-page'], ['form[name=truck-form]'])">Create truck</button>
+            <button class="get-truck" onclick="getTruckList()">Take truck</button>
+            <button onclick="navigation(['.driver-page'], ['.select-enter'])">To main page</button>
+        </div>
+
+        <div class="driver-load-list-title">Your load:</div>
+        <div class="driver-load-list"></div>
+        <div class="driver-mark-block">
+            <div class="mark-items-block">
+                <div class="mark-item item1" onclick="giveCustomerMark(5)">5</div>
+                <div class="mark-item item2" onclick="giveCustomerMark(4)">4</div>
+                <div class="mark-item item3" onclick="giveCustomerMark(3)">3</div>
+                <div class="mark-item item4" onclick="giveCustomerMark(2)">2</div>
+                <div class="mark-item item5" onclick="giveCustomerMark(1)">1</div>
+            </div>
+            <button class="mark-button" onclick="giveCustomerMark(0)">Don`t rate</button>
+        </div>
+        <div class="display-driver-mark"></div>
+    </div>
+
+    <form action="" name="truck-form">
+        <div class="truck-form-title">Create truck</div>
+        <input type="text" name="truck-title" id="truck-title" placeholder="Truck title">
+        <select name="truck" id="truck-category">
+            <option value="" disabled selected hidden>Truck category</option>
+            <option value="Sprinter">Sprinter (description)</option>
+            <option value="Small Straite">Small Straite (description)</option>
+            <option value="Long Straite">Long Straite (description)</option>
+        </select>
+
+        <button onclick="checkTruckForm();">Создать</button>
+        <button onclick="navigation(['form[name=truck-form]'], ['.driver-page']); event.preventDefault(); truckFormClear()">Back</button>
+    </form>
+
+    <div class="select-truck-page">
+        <div class="select-truck-page-title">Available trucks:</div>
+        <div class="select-truck"></div>
+        <button onclick="navigation(['.select-truck-page'], ['.driver-page']); clearTruckList()">Back</button>
+    </div>
+
+    <div class="select-load-page">
+        <div class="select-load-page-title">Available loads:</div>
+        <div class="select-load-list"></div>
+        <button onclick="navigation(['.select-load-page'], ['.driver-page']); clearAvailableLoadList()">Back</button>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,563 @@
+form,
+.select-registration,
+.driver-form,
+.customer-page,
+.driver-page,
+.select-truck-page,
+.select-load-page,
+.driver-mark-block,
+.customer-mark-block-wrapper {
+    display: none;
+}
+
+html {
+    background-color: whitesmoke;
+}
+
+body {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    margin-top: 5%;
+    background-color: #1f1547;
+    color: #fff;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    color: #fff;
+    background-color: #522850;
+    border: 1px solid #b387ba;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #70366d;
+    color: #ddd;
+}
+
+button,
+button:active,
+button:focus,
+input,
+input:active,
+input:focus {
+    outline: none;
+}
+
+input {
+    padding: 15px 0 15px 20px;
+    border-radius: 50px;
+    margin: 0;
+    border: 2px solid #b387ba;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* main page */
+
+.select-enter {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-enter button {
+    width: 290px;
+    padding: 30px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.select-enter .delete-db {
+    padding: 8px;
+    width: 91px;
+    font-size: 15px;
+}
+
+
+/* enter page */
+
+form[name=enter] {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form[name=enter] button {
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 20px;
+}
+
+form[name=enter] input {
+    margin-bottom: 15px;
+    width: 200px;
+}
+
+.enter-button {
+    width: 170px;
+}
+
+
+/* select registration  */
+
+.select-registration {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-registration div {
+    height: 82px;
+    width: 300px;
+    padding-top: 20px;
+    font-size: 50px;
+    color: #291845;
+    background-color: #b387ba;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 3px;
+}
+
+.select-registration div:hover {
+    background-color: #846489;
+    cursor: pointer
+}
+
+.select-registration button {
+    padding: 10px 20px;
+}
+
+
+/* registration page */
+
+form[name=registration] {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form[name=registration] input {
+    padding: 10px 0 10px 15px;
+    margin-bottom: 15px;
+}
+
+form[name=registration] button {
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.driver-form {
+    width: 70%;
+    justify-content: space-around;
+}
+
+.driver-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0 0 0 15px;
+    border-radius: 50px;
+    margin: 0;
+    border: 2px solid #b387ba;
+    color: #8c8c8c;
+    height: 42px;
+    width: 180px;
+}
+
+.driver-form select,
+.driver-form select:hover,
+.driver-form select:active {
+    outline: none;
+}
+
+
+/* customer page */
+
+.customer-page {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.customer-page-buttons {
+    margin-bottom: 35px;
+}
+
+.customer-page button {
+    width: 150px;
+}
+
+.add-load-button {
+    margin-right: 35px;
+}
+
+.customer-loads-list,
+.customer-posted-loads-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.load-list-title {
+    margin-bottom: 20px;
+}
+
+.load-item,
+.load-posted-item,
+.load-taken-item,
+.load-completed-item,
+.load-refused-item,
+.load-notfound-item {
+    display: flex;
+    justify-content: space-between;
+    min-width: 65%;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.load-loaded-item {
+    display: flex;
+    align-items: flex-start;
+    width: 65%;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.load-item button,
+.load-posted-item button,
+.load-taken-item button,
+.load-completed-item button,
+.load-refused-item button,
+.load-notfound-item button {
+    margin: -5px 0 10px 5px;
+    width: 70px;
+    padding: 5px 10px;
+}
+
+
+/*  */
+
+.dicsplay-customer-mark {
+    align-self: flex-end;
+    padding-right: 50px;
+    margin-top: 100px;
+}
+
+
+/* add load */
+
+form[name=add-load] {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form[name=add-load] #load-size {
+    padding: 0 0 0 15px;
+    border-radius: 50px;
+    margin: 0;
+    border: 2px solid #b387ba;
+    color: #8c8c8c;
+    height: 50px;
+    width: 180px;
+}
+
+form[name=add-load] #description {
+    resize: none;
+    padding: 5px 5px 0 5px;
+    width: 350px;
+    height: 65px;
+    border: 2px solid #b387ba;
+    border-radius: 10px;
+}
+
+.load-items-block,
+#load-title,
+#description {
+    margin-bottom: 15px;
+}
+
+form[name=add-load] button {
+    padding: 10px 30px;
+    margin-top: 15px;
+}
+
+form[name=add-load] select,
+form[name=add-load] select:hover,
+form[name=add-load] select:active,
+textarea,
+text:hover,
+textarea:active {
+    outline: none;
+}
+
+
+/* driver page */
+
+.driver-page {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.driver-button-block {
+    margin-bottom: 30px;
+}
+
+.driver-button-block button {
+    margin-left: 15px;
+}
+
+.find-load {
+    margin-left: 0;
+}
+
+.driver-load-list-title {
+    margin-bottom: 10px;
+}
+
+.driver-load-list {
+    font-size: 16px;
+}
+
+.driver-load-list button {
+    width: 100px;
+    margin-top: 15px;
+}
+
+.load-info {
+    margin-bottom: 6px;
+}
+
+.driver-load-list .info-name {
+    font-weight: 600;
+}
+
+.driver-load-list .info {
+    font-weight: 400;
+}
+
+.display-driver-mark {
+    align-self: flex-end;
+    padding-right: 50px;
+    margin-top: 100px;
+}
+
+.driver-mark-block {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.mark-items-block {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.driver-mark-block .mark-button {
+    margin-top: 10px;
+}
+
+
+/* mark */
+
+.driver-mark-block .mark-item,
+.customer-mark-block .mark-item {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    background-color: #ffbc03;
+    color: #000;
+    text-align: center;
+}
+
+.driver-mark-block .mark-item:hover,
+.customer-mark-block .mark-item:hover {
+    cursor: pointer;
+}
+
+.item1:hover,
+.item1:hover~.item2,
+.item1:hover~.item3,
+.item1:hover~.item4,
+.item1:hover~.item5 {
+    background-color: #f8eb5f;
+}
+
+.item2:hover,
+.item2:hover~.item3,
+.item2:hover~.item4,
+.item2:hover~.item5 {
+    background-color: #f8eb5f;
+}
+
+.item3:hover,
+.item3:hover~.item4,
+.item3:hover~.item5 {
+    background-color: #f8eb5f;
+}
+
+.item4:hover,
+.item4:hover+.item5 {
+    background-color: #f8eb5f;
+}
+
+.item5:hover {
+    background-color: #f8eb5f;
+}
+
+
+/* customer mark */
+
+.customer-mark-block-wrapper {
+    width: 89%;
+    height: 77%;
+    background-color: transparent;
+    position: absolute;
+    margin-top: -30px;
+}
+
+.customer-mark-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 126px;
+    border: 2px solid #40273c;
+    background-color: #201648;
+    width: 350px;
+    height: 150px;
+}
+
+.customer-mark-block button {
+    width: 120px;
+    margin-top: 15px;
+}
+
+.mark-notrate {
+    margin-right: 20px;
+}
+
+
+/* create truck */
+
+form[name=truck-form] {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.truck-form-title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    margin-top: -70px;
+}
+
+form[name=truck-form] button {
+    padding: 10px 40px;
+    margin-top: 20px;
+    margin-bottom: -5px;
+}
+
+form[name=truck-form] input {
+    margin-bottom: 15px;
+}
+
+form[name=truck-form] select {
+    padding: 0 0 0 15px;
+    border-radius: 50px;
+    margin: 0;
+    border: 2px solid #b387ba;
+    color: #8c8c8c;
+    height: 52px;
+    width: 180px;
+    margin-bottom: 15px;
+}
+
+form[name=truck-form] select,
+form[name=truck-form] select:hover,
+form[name=truck-form] select:active {
+    outline: none;
+}
+
+
+/* select truck */
+
+.select-truck-page>button {
+    margin-top: 20px;
+    align-self: flex-end;
+    margin-right: 160px;
+}
+
+
+/* select load */
+
+.select-load-page,
+.select-truck-page {
+    min-width: 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.select-load-page-title,
+.select-truck-page-title {
+    margin-bottom: 30px;
+}
+
+.select-load-page button,
+.select-truck-page button {
+    padding: 10px 20px;
+}
+
+.select-load-list,
+.select-truck {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.posted-load-item,
+.truck-item {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.take-load {
+    margin-top: -5px;
+}
+
+.select-load-page>button {
+    margin-top: 20px;
+    align-self: flex-end;
+    margin-right: 150px;
+}
