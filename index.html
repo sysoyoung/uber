@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="script/script.js"></script>
+    <script src="src/index.js"></script>
     <link rel="stylesheet" href="style/index.css">
     <script>
         window.onload = function() {
@@ -66,7 +66,7 @@
         <div class="customer-posted-loads-list"></div>
         <div class="customer-completed-loads"></div>
         <div class="customer-mark-block-wrapper" onclick="setCancelConfirm()">
-            <div class="customer-mark-block">
+            <div class="customer-mark-block" onclick="event.stopPropagation()">
                 <div class="mark-items-block">
                     <div class="mark-item item1" onclick="giveDriverMark(5)">5</div>
                     <div class="mark-item item2" onclick="giveDriverMark(4)">4</div>
